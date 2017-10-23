@@ -7,8 +7,13 @@ const getWord = () => {
     method: "GET",
     url: `${baseUrl}/top_word`,
     success: function (data){
-      a = JSON.stringify(data.word)
-      $("h3").append(a)
+      let formatted = []
+      wordObject = data.word
+      for (let word in wordObject) {
+        formatted.push(word)
+        formatted.push(wordObject[word])
+      }
+      $("h3").append(`"${formatted[0]}" (${formatted[1]})`)
     },
     failure: function(){
       ErrorHelper.showError("Could Not Load")
