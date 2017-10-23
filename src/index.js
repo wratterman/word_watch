@@ -7,8 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   $.ajax({
     method: "GET",
     url: baseUrl + "/api/v1/top_word",
-    success: function (){
-      console.log("nil")
+    success: function (data){
+      a = JSON.stringify(data.word)
+      $("h3").append(a)
     },
     failure: function(){
       ErrorHelper.showError("Could Not Load")
