@@ -15,4 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ErrorHelper.showError("Could Not Load")
     }
   })
+
+  $("button").on("click", function() => {
+    debugger
+  })
 })
