@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  $("button").on("click", function() => {
+  $("button").on("click", function(element) {
+    a = (this.parentElement.children[1].value).split(" ")
     debugger
   })
 })
