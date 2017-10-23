@@ -42,7 +42,7 @@ const formatAndSortVals = (timesSaid) => {
 const appendPage = (sorted) => {
   sorted.reverse().forEach(function(word) {
     $(".word-count").append(word[0] + "<br>")
-    postWord(word[0])
+    postWord(word[0].toLowerCase())
   })
 }
 
