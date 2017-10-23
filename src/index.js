@@ -18,6 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $("button").on("click", function(element) {
     a = (this.parentElement.children[1].value).split(" ")
+    timesSaid = {}
+    a.forEach(function(word){
+      if (timesSaid[word.toLowerCase()]) {
+        timesSaid[word.toLowerCase()] ++
+      } else {
+        timesSaid[word.toLowerCase()] = 1
+      }
+    })
     debugger
   })
 })
