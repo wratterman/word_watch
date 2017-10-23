@@ -26,6 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
         timesSaid[word.toLowerCase()] = 1
       }
     })
+    let sorted = []
+    for (var word in timesSaid) {
+      sorted.push([word, timesSaid[word]])
+    }
+    sorted.sort(function(a, b) {
+      return a[1] - b[1]
+    })
+    let display = []
+    sorted.reverse().forEach(function(word) {
+      display.push(word[0])
+    })
     debugger
   })
 })
