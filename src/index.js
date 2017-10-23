@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let display = []
     sorted.reverse().forEach(function(word) {
       display.push(word[0])
+      $(".word-count").append(word + "<br>")
+    })
+    display.forEach(function(word){
     })
     debugger
   })
