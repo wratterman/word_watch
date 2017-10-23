@@ -3,9 +3,16 @@ const ErrorHelper = require('./error-helper')
 const baseUrl = "https://wordwatch-api.herokuapp.com/api/v1"
 
 const sortWords = () => {
-  $("button").on("click", function(element) {
+  $("button").on("click", function(e) {
     words = (this.parentElement.children[1].value).split(" ")
     parseParaphraph(words)
+  })
+
+  $("textarea").keypress(function(e) {
+    if (e.which == 13) {
+      words = (this.parentElement.children[1].value).split(" ")
+      parseParaphraph(words)
+    }
   })
 }
 
