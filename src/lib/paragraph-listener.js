@@ -41,7 +41,8 @@ const formatAndSortVals = (timesSaid) => {
 
 const appendPage = (sorted) => {
   sorted.reverse().forEach(function(word) {
-    $(".word-count").append(word[0] + "<br>")
+    $(".word-count").append(`<p class="${word[0]}"> ${word[0]}</p><br />`)
+    $(`.${word[0]}`).css(`font-size`, `${word[1]}em`)
     postWord(word[0].toLowerCase())
   })
 }
